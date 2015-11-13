@@ -1,0 +1,12 @@
+USE easycontact;
+DROP TABLE IF EXISTS contacto;
+CREATE TABLE contacto (
+id INT NOT NULL AUTO_INCREMENT,
+nombre VARCHAR(127) NOT NULL,
+apellido VARCHAR(127),
+telefono VARCHAR(15),
+movil VARCHAR(15),
+email VARCHAR(127),
+direccion VARCHAR(127),
+PRIMARY KEY (id) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
