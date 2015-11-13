@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="iteracion1.dominio.Contacto_I1" table="contacto" >
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        
+        <property name="nombre" type="string">
+            <column name="nombre" length="127" not-null="true" unique="false" />
+        </property>
+        
+        <property name="apellido" type="string">
+            <column name="apellido" length="127" not-null="false" unique="false" />
+        </property>
+        
+        <property name="telefono" type="string">
+            <column name="telefono" length="127" not-null="false" unique="false" />
+        </property>        
+        
+        <property name="movil" type="string">
+            <column name="movil" length="127" not-null="false" unique="false" />
+        </property>   
+        
+        <property name="email" type="string">
+            <column name="email" length="127" not-null="false" unique="false" />
+        </property>
+        
+        <property name="direccion" type="string">
+            <column name="direccion" length="127" not-null="false" unique="false" />
+        </property>
+                                  
+    </class>
+</hibernate-mapping>
