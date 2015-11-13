@@ -6,8 +6,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.List;
 
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 
 //import iteracion1.controlador.AppController_I1.ListMouseListener;
 import iteracion1.dominio.Contacto_I1;
@@ -54,8 +56,29 @@ public class BuscarController_I4 {
 		String searchText = getFrame().getSearchField().getText();
 		
 		if (!searchText.isEmpty()){
-			getFrame().getList().setListData(
-					getAppController().getAgenda().findContacto(searchText).toArray());
+			
+			List<Contacto_I1> list = getAppController().getAgenda().findContacto(searchText);
+			
+			if (!list.isEmpty()){
+				
+				getFrame().getList().setListData(list.toArray());
+			}else{
+				
+				JOptionPane.showMessageDialog(
+						getFrame(),
+						"No se ha encontrado ninguna coincidencia",
+						"Advertencia",
+					    JOptionPane.INFORMATION_MESSAGE);
+			}
+			
+		}else{
+			
+			JOptionPane.showMessageDialog(
+					getFrame(),
+					"Introduce el nombre a buscar",
+					"Advertencia",
+				    JOptionPane.WARNING_MESSAGE);
+		
 		}
 	}
 	
